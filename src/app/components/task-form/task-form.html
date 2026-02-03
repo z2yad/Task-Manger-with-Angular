@@ -1,0 +1,46 @@
+<div class="form-container">
+    <h2>Add New Task</h2>
+    <form [formGroup]="taskForm" (ngSubmit)="onsubmit()">
+        <!-- Title Input -->
+        <div class="form-control">
+            <label for="title">Task Title</label>
+            <input type="text" id="title" formControlName="title" placeholder="Enter task title">
+            @if(taskForm.controls.title.invalid && taskForm.controls.title.touched){
+            <div class="error">
+                @if(taskForm.controls.title.hasError('required')){
+                <small>Title is required</small>
+                }
+                @if(taskForm.controls.title.hasError('minlength')){
+                <small>Title must be at least 3 characters long</small>
+                }
+            </div>
+            }
+        </div>
+
+        <!-- Description Input -->
+        <div class="form-control">
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description" placeholder="Enter task description"
+                rows="4"></textarea>
+            @if (taskForm.controls.description.invalid && taskForm.controls.description.touched) {
+            <div class="error">
+                @if(taskForm.controls.description.hasError('required')){
+                <small>Description is required</small>
+                }
+                @if(taskForm.controls.description.hasError('minlength')){
+                <small>Description must be at least 10 characters long</small>
+                }
+            </div>
+            }
+        </div>
+
+        <!-- Created At Input (Optional) -->
+        <!-- Note: Usually CreatedAt is automatic, but keeping it as user asked -->
+        <!--  -->
+
+        <div class="button-group">
+            <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
+            <a routerLink="/" class="btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>

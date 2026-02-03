@@ -1,0 +1,155 @@
+/* ================= Container ================= */
+.form-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    color: #1a1f36;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ================= Controls ================= */
+.form-control {
+    margin-bottom: 1.5rem;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+    /* Softer dark gray */
+    font-size: 0.95rem;
+}
+
+.form-control input,
+.form-control textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background-color: #f9fafb;
+    color: #1a1f36;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline: none;
+    border-color: #080f5b;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(8, 15, 91, 0.1);
+}
+
+.form-control input::placeholder,
+.form-control textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* ================= Errors ================= */
+.form-control .error {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-control small {
+    color: #e11d48;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.form-control small::before {
+    content: "•";
+    margin-right: 0.4rem;
+}
+
+/* ================= Buttons ================= */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+button[type="submit"] {
+    flex: 2;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #080f5b;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: #0f1880;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(8, 15, 91, 0.3);
+}
+
+button[type="submit"]:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ================= Cancel Button ================= */
+.btn-cancel {
+    flex: 1;
+    padding: 0.875rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #4b5563;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cancel:hover {
+    background-color: #f3f4f6;
+    color: #1a1f36;
+    border-color: #d1d5db;
+}

@@ -1,0 +1,175 @@
+/* ================= Container & Layout ================= */
+.task-detail-conyainer {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= Header ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1a1f36;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* ================= Status Badge ================= */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.status-badge.completed {
+    background-color: #ecfdf5;
+    color: #059669;
+    border: 1px solid #d1fae5;
+}
+
+.status-badge.active {
+    background-color: #fff1f2;
+    color: #e11d48;
+    border: 1px solid #ffe4e6;
+}
+
+/* ================= Task Details Section ================= */
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-row strong {
+    display: block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.detail-row p {
+    margin: 0;
+    font-size: 1.125rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* ================= Actions ================= */
+.actions {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #080f5b;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
+}
+
+.btn-back a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #0f1880;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(8, 15, 91, 0.3);
+}
+
+.btn-back:active {
+    transform: translateY(0);
+}
+
+/* ================= Not Found State ================= */
+.not-found {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.not-found h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.75rem;
+    color: #1a1f36;
+}
+
+.not-found p {
+    margin: 0 0 2rem 0;
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 640px) {
+    .task-detail-conyainer {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+}

@@ -3,7 +3,8 @@
     <div>
         <div class="header">
             <h1>{{currentTask.title}}</h1>
-            <span class="status-badge" [class.completed]="currentTask.completed">
+            <span class="status-badge" [class.completed]="currentTask.completed"
+                [class.active]="!currentTask.completed">
                 {{currentTask.completed ? 'Completed' : 'Active'}}
             </span>
         </div>
@@ -21,7 +22,8 @@
                 <p>{{currentTask.completed ? 'Completed' : 'in-progress'}}</p>
             </div>
             <div class="actions">
-                <button class="btn-back"><a routerLink="/">back to list</a></button>
+                <a class="btn-back" routerLink="/">back to list</a>
+                <button class="btn-delete" (click)="deleteTask(currentTask.id)">Delete</button>
             </div>
         </div>
     </div>

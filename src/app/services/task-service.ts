@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 export interface Task {
   id: number;
@@ -29,11 +29,20 @@ export class TaskService {
     },
   ]);
   tasks = this.tasksignal.asReadonly();
+  completedTasks = computed(() => {
+    return this.tasksignal().filter((task) => task.completed);
+  });
+
+  activeTasks = computed(() => {
+    return this.tasksignal().filter((task) => !task.completed);
+  });
 
   getTask(id: number) {
     return this.tasks().find((task) => task.id === id);
   }
-
+  deleteTask(id: number) {
+    return this.tasksignal.update((tasks) => tasks.filter((task) => task.id !== id))
+  }
   addTask(title: string, description: string) {
     const task: Task = {
       id: this.tasks().length + 1,

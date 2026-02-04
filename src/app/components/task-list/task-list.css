@@ -17,7 +17,6 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
     border-color: rgba(8, 15, 91, 0.1);
-    /* Subtle blue tint border on hover */
 }
 
 /* Flex container for content */
@@ -33,15 +32,11 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: #080f5b;
-    /* Matches navbar */
-    /* Remove p tag inherited styles if any */
 }
 
 .task-content h3 a {
-    margin: 0;
     text-decoration: none;
-    color: #080f5b;
-    /* Reset p margin inside h3 */
+    color: inherit;
     display: inline;
 }
 
@@ -49,7 +44,7 @@
 .task-content>p {
     margin: 0;
     font-size: 1rem;
-    color: #555;
+    color: #4b5563;
     line-height: 1.6;
 }
 
@@ -58,11 +53,11 @@
     margin-top: 0.5rem;
     display: inline-block;
     font-size: 0.85rem;
-    color: #8898aa;
+    color: #94a3b8;
     font-weight: 500;
 }
 
-/* Optional: Add a subtle left border accent */
+/* Subtle left border accent on task items */
 .task-item::before {
     content: '';
     position: absolute;
@@ -77,4 +72,96 @@
 
 .task-item:hover::before {
     opacity: 1;
+}
+
+/* ================= Filters ================= */
+.filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+    /* Fixed: Needed for pseudo-elements */
+    overflow: hidden;
+}
+
+.filter button:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Unified styling for active filter buttons */
+.filter button.all,
+.filter button.active,
+.filter button.completed {
+    background-color: #080f5b;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
+}
+
+/* Specific hover overrides for different states */
+.filter button.active:hover {
+    background-color: #d97706;
+    /* Warmer amber/yellow */
+}
+
+.filter button.completed:hover {
+    background-color: #059669;
+    /* Solid green */
+}
+
+/* The indicator bar for the selected button */
+.filter button.all::before,
+.filter button.active::before,
+.filter button.completed::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ================= Delete Button ================= */
+.btn-delete {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    margin-top: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #64748b;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+/* ================= Empty State ================= */
+.no-tasks-message {
+    color: #64748b;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-top: 1rem;
+    border: 2px dashed #e2e8f0;
 }

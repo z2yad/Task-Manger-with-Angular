@@ -59,12 +59,16 @@
     background-color: #ecfdf5;
     color: #059669;
     border: 1px solid #d1fae5;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
 }
 
 .status-badge.active {
-    background-color: #fff1f2;
-    color: #e11d48;
+    background-color: #d97706;
+    color: #ffffff;
+    cursor: pointer;
     border: 1px solid #ffe4e6;
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
 }
 
 /* ================= Task Details Section ================= */
@@ -135,6 +139,39 @@
     transform: translateY(0);
 }
 
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.btn-delete {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #64748b;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(8, 15, 91, 0.2);
+    width: 25%;
+    height: 50px;
+}
+
+.btn-delete:hover {
+    color: #dc2626;
+    border-color: #fee2e2;
+    border: 1px solid #fee2e2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(8, 15, 91, 0.3);
+}
+
+.btn-delete:active {
+    transform: translateY(0);
+}
+
 /* ================= Not Found State ================= */
 .not-found {
     text-align: center;
@@ -155,6 +192,7 @@
     font-size: 1.1rem;
     color: #64748b;
 }
+
 
 /* ================= Responsive ================= */
 @media (max-width: 640px) {
